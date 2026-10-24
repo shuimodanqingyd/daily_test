@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1024 // 人与机器的协作简史</title>
+    <meta name="description" content="1024 程序员节互动页：三个可点击的起源引擎风格小剧场，讲程序员和 AI 的互助。" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- 开机自检：回车或点击跳过 -->
+    <div class="boot" id="boot">
+      <div class="boot-inner">
+        <div class="boot-brand">SOURCE<span>//</span>1024</div>
+        <ul class="boot-lines" id="bootLines"></ul>
+        <div class="boot-bar"><i id="bootBar"></i></div>
+        <div class="boot-hint">[ CLICK OR PRESS ENTER ]</div>
+      </div>
+    </div>
+
+    <div class="crt" id="crt">
+      <div class="fx fx-scan"></div>
+      <div class="fx fx-grain"></div>
+      <div class="fx fx-vignette"></div>
+
+      <header class="hud">
+        <div class="hud-left">
+          <div class="lambda">λ</div>
+          <div class="hud-title">
+            <h1>人与机器的协作简史</h1>
+            <p>PROGRAMMER'S DAY <b>10.24</b> · THREE PLAYABLE SCENES</p>
+          </div>
+        </div>
+        <div class="hud-right">
+          <div class="meter" title="帧率（装饰）">
+            <span>FPS</span><b id="fps">60</b>
+          </div>
+          <div class="meter" title="今日进度（装饰）">
+            <span>DAY</span><b>24</b>
+          </div>
+          <button class="sfx" id="sfxBtn" type="button" aria-pressed="true">SOUND ON</button>
+        </div>
+      </header>
+
+      <main class="deck">
+        <!-- ============================================ 01 -->
+        <article class="chapter" data-scene="1" tabindex="0" role="button" aria-label="场景一：日常的 bug 与 AI 的解答">
+          <div class="chapter-head">
+            <span class="num">01</span>
+            <div class="chapter-title">
+              <h2>日常的 bug</h2>
+              <p>深夜，代码又红了。他把问题说给 AI 听。</p>
+            </div>
+            <span class="state">▶ CLICK TO PLAY</span>
+          </div>
+
+          <div class="stage">
+            <svg viewBox="0 0 400 230" class="stage-svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="s1room" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#10161a" /><stop offset="1" stop-color="#06090b" />
+                </linearGradient>
+                <linearGradient id="s1screen" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#0d2a2f" /><stop offset="1" stop-color="#061417" />
+                </linearGradient>
+                <radialGradient id="s1lamp" cx="0.5" cy="0.3" r="0.6">
+                  <stop offset="0" stop-color="#ffb347" stop-opacity="0.28" />
+                  <stop offset="1" stop-color="#ffb347" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+
+              <rect width="400" height="230" fill="url(#s1room)" />
+              <ellipse cx="205" cy="120" rx="120" ry="90" fill="url(#s1lamp)" />
+
+              <g opacity="0.4" stroke="#1c2a31">
+                <rect x="18" y="24" width="84" height="62" fill="#0a1418" />
+                <path d="M60 24 V86 M18 55 H102" />
+              </g>
+
+              <path d="M0 178 H400 V230 H0 Z" fill="#0a0e11" />
+              <path d="M0 178 H400" stroke="#1d262c" stroke-width="2" />
+
+              <g class="s1-desk">
+                <rect x="58" y="150" width="252" height="10" fill="#242c31" />
+                <rect x="58" y="160" width="252" height="4" fill="#0d1215" />
+                <rect x="70" y="164" width="9" height="34" fill="#1a2126" />
+                <rect x="290" y="164" width="9" height="34" fill="#1a2126" />
+                <rect x="112" y="140" width="16" height="11" rx="2" fill="#39464e" />
+                <path d="M112 141 q8 -4 16 0" stroke="#22303a" stroke-width="2" fill="none" />
+                <path class="s1-steam" d="M120 138 q-4 -8 1 -13 q5 -5 1 -11" stroke="#6f8794" stroke-width="1.6" fill="none" opacity="0.5" />
+              </g>
+
+              <g class="s1-monitor">
+                <rect x="150" y="94" width="106" height="60" rx="3" fill="#191f24" stroke="#33414a" />
+                <rect x="156" y="100" width="94" height="46" fill="url(#s1screen)" />
+                <g class="s1-code" fill="#57e08f" font-family="Consolas, monospace" font-size="6.5">
+                  <text x="160" y="109">while (alive) {</text>
+                  <text x="164" y="119">try { ship(); }</text>
+                  <text x="164" y="129">catch (e) { cry(); }</text>
+                  <text x="160" y="139">}</text>
+                </g>
+                <rect class="s1-error" x="150" y="94" width="106" height="60" fill="none" stroke="#ff4b3e" stroke-width="2" opacity="0" />
+                <text class="s1-error-label" x="203" y="88" text-anchor="middle" fill="#ff4b3e" font-size="7" font-family="Consolas, monospace" opacity="0">ERROR 0x1024</text>
+                <rect x="197" y="154" width="12" height="4" fill="#2a343a" />
+              </g>
+
+              <g class="s1-dev">
+                <circle cx="96" cy="118" r="12" fill="#e0b48c" />
+                <path d="M84 115 q12 -15 24 0 q-12 -6 -24 0" fill="#191919" />
+                <path d="M82 150 q0 -23 14 -23 q14 0 14 23 z" fill="#2f3a42" />
+                <path d="M96 142 l-13 17 M96 142 l13 17" stroke="#2f3a42" stroke-width="7" stroke-linecap="round" />
+                <path class="s1-arm" d="M104 146 q14 2 20 8" stroke="#2f3a42" stroke-width="6" fill="none" stroke-linecap="round" />
+                <circle class="s1-hand" cx="126" cy="156" r="3.4" fill="#e0b48c" />
+              </g>
+
+              <g class="s1-bugs">
+                <g class="bug b1">
+                  <ellipse cx="196" cy="80" rx="5" ry="4" fill="#ff5a4a" />
+                  <path d="M191 78 h10 M196 76 v8" stroke="#3b1410" stroke-width="1" />
+                </g>
+                <g class="bug b2">
+                  <ellipse cx="228" cy="64" rx="4" ry="3.4" fill="#ff7a3d" />
+                  <path d="M224 62 h8 M228 61 v6" stroke="#3b1410" stroke-width="1" />
+                </g>
+                <g class="bug b3">
+                  <ellipse cx="172" cy="58" rx="3.6" ry="3" fill="#ff5a4a" />
+                  <path d="M168 57 h7 M172 55 v6" stroke="#3b1410" stroke-width="1" />
+                </g>
+              </g>
+
+              <path class="s1-beam" d="M292 118 L246 118 L246 140 L292 140 Z" fill="#ff9f1a" opacity="0" />
+
+              <g class="s1-ai">
+                <rect x="298" y="94" width="48" height="56" rx="6" fill="#2b343b" stroke="#4b5b66" />
+                <rect x="306" y="102" width="32" height="15" rx="3" fill="#0b1013" />
+                <circle class="ai-eye" cx="322" cy="109.5" r="3.6" fill="#ff9f1a" />
+                <circle class="ai-eye-core" cx="322" cy="109.5" r="1.5" fill="#fff3d6" />
+                <path d="M322 94 v-9" stroke="#4b5b66" stroke-width="2" />
+                <circle class="ai-antenna" cx="322" cy="82" r="2.6" fill="#ffc861" />
+                <rect x="290" y="114" width="8" height="21" rx="3" fill="#2b343b" />
+                <rect x="346" y="114" width="8" height="21" rx="3" fill="#2b343b" />
+                <rect x="306" y="150" width="10" height="10" fill="#232b31" />
+                <rect x="328" y="150" width="10" height="10" fill="#232b31" />
+                <g class="s1-bubble" opacity="0">
+                  <rect x="232" y="34" width="126" height="48" rx="4" fill="#0d1317" stroke="#ff9f1a" />
+                  <path d="M258 82 l-6 8 l10 -8 z" fill="#0d1317" stroke="#ff9f1a" />
+                  <text x="242" y="50" fill="#ffc861" font-size="7" font-family="Consolas, monospace">AI: 先看栈，再看日志。</text>
+                  <text x="242" y="62" fill="#9fb3bf" font-size="6.5" font-family="Consolas, monospace">别急，我们一行行来。</text>
+                  <text x="242" y="74" fill="#57e08f" font-size="6.5" font-family="Consolas, monospace">→ line 42: null check</text>
+                </g>
+              </g>
+
+              <g class="s1-fixed" opacity="0">
+                <rect x="150" y="94" width="106" height="60" rx="3" fill="#0a1a12" stroke="#57e08f" />
+                <text x="203" y="120" text-anchor="middle" fill="#57e08f" font-size="9" font-family="Consolas, monospace">BUILD OK</text>
+                <text x="203" y="134" text-anchor="middle" fill="#6f8794" font-size="6" font-family="Consolas, monospace">0 errors · 0 warnings</text>
+              </g>
+            </svg>
+          </div>
+
+          <p class="chapter-log" data-log></p>
+        </article>
+
+        <!-- ============================================ 02 -->
+        <article class="chapter" data-scene="2" tabindex="0" role="button" aria-label="场景二：难题交给 AI，程序员去刷手机">
+          <div class="chapter-head">
+            <span class="num">02</span>
+            <div class="chapter-title">
+              <h2>难题交给它</h2>
+              <p>线上炸了，他把 AI 叫出来，自己刷起了手机。</p>
+            </div>
+            <span class="state">▶ CLICK TO PLAY</span>
+          </div>
+
+          <div class="stage">
+            <svg viewBox="0 0 400 230" class="stage-svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="s2room" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#121417" /><stop offset="1" stop-color="#07090a" />
+                </linearGradient>
+                <linearGradient id="s2screen" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#10262a" /><stop offset="1" stop-color="#061214" />
+                </linearGradient>
+                <radialGradient id="s2glow" cx="0.5" cy="0.5" r="0.5">
+                  <stop offset="0" stop-color="#6fd3ff" stop-opacity="0.22" />
+                  <stop offset="1" stop-color="#6fd3ff" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+
+              <rect width="400" height="230" fill="url(#s2room)" />
+
+              <g opacity="0.55">
+                <rect x="0" y="18" width="400" height="8" fill="#1b2126" />
+                <g fill="#2a3238">
+                  <rect x="24" y="26" width="58" height="6" /><rect x="98" y="26" width="34" height="6" />
+                  <rect x="148" y="26" width="70" height="6" /><rect x="234" y="26" width="46" height="6" />
+                  <rect x="296" y="26" width="80" height="6" />
+                </g>
+              </g>
+
+              <g class="s2-banner">
+                <rect x="46" y="46" width="176" height="26" fill="#1a0e0c" stroke="#ff4b3e" />
+                <g fill="#ff4b3e" opacity="0.9">
+                  <path d="M52 46 l8 8 l-8 8 z" /><path d="M216 46 l-8 8 l8 8 z" />
+                </g>
+                <text x="62" y="64" fill="#ff6a5f" font-size="12" font-family="Consolas, monospace" letter-spacing="2">SEGFAULT</text>
+                <text class="s2-blink" x="206" y="64" fill="#ffb347" font-size="9" font-family="Consolas, monospace">▲</text>
+              </g>
+
+              <path d="M0 182 H400 V230 H0 Z" fill="#0a0d0f" />
+              <path d="M0 182 H400" stroke="#1d262c" stroke-width="2" />
+
+              <ellipse cx="150" cy="150" rx="90" ry="48" fill="url(#s2glow)" />
+
+              <g class="s2-terminal">
+                <rect x="70" y="120" width="150" height="62" rx="3" fill="#171d21" stroke="#3a4a54" />
+                <rect x="77" y="126" width="136" height="40" fill="url(#s2screen)" />
+                <g class="s2-lines" font-family="Consolas, monospace" font-size="6.4" fill="#6fd3ff">
+                  <text x="82" y="136" class="l1">$ git bisect run ./test.sh</text>
+                  <text x="82" y="146" class="l2">→ culprit: commit 0x1024</text>
+                  <text x="82" y="156" class="l3">$ patch --fix --now</text>
+                </g>
+                <rect x="77" y="168" width="136" height="5" fill="#0b1418" />
+                <rect class="s2-progress" x="77" y="168" width="0" height="5" fill="#ff9f1a" />
+                <text x="77" y="184" fill="#6f8794" font-size="5.6" font-family="Consolas, monospace">PATCHING…</text>
+              </g>
+
+              <g class="s2-ai" transform="translate(86,50)">
+                <rect x="156" y="82" width="44" height="38" rx="6" fill="#2b343b" stroke="#4b5b66" />
+                <rect x="163" y="89" width="30" height="13" rx="3" fill="#0b1013" />
+                <circle class="ai-eye" cx="178" cy="95.5" r="3.2" fill="#6fd3ff" />
+                <path d="M178 82 v-7" stroke="#4b5b66" stroke-width="2" />
+                <circle class="ai-antenna" cx="178" cy="72" r="2.4" fill="#ffc861" />
+                <rect class="s2-arm-l" x="148" y="96" width="7" height="22" rx="3" fill="#2b343b" />
+                <rect class="s2-arm-r" x="201" y="96" width="7" height="22" rx="3" fill="#2b343b" />
+                <rect x="164" y="120" width="9" height="8" fill="#232b31" />
+                <rect x="183" y="120" width="9" height="8" fill="#232b31" />
+              </g>
+
+              <g class="s2-dev">
+                <ellipse cx="316" cy="176" rx="52" ry="12" fill="#1a2126" />
+                <path d="M286 174 q30 -26 60 0 z" fill="#2b333a" />
+                <circle cx="318" cy="132" r="11" fill="#e0b48c" />
+                <path d="M307 129 q11 -12 22 0 q-11 -5 -22 0" fill="#191919" />
+                <path d="M302 170 q2 -22 16 -22 q14 0 16 22" fill="#39454e" />
+                <path d="M302 160 q-14 6 -18 14" stroke="#39454e" stroke-width="6" fill="none" stroke-linecap="round" />
+                <g class="s2-phone">
+                  <rect x="330" y="140" width="16" height="24" rx="3" fill="#0c1216" stroke="#4b5b66" />
+                  <rect x="332" y="143" width="12" height="18" fill="#12323a" />
+                  <g class="s2-feed" stroke="#6fd3ff" stroke-width="1" opacity="0.9">
+                    <path d="M334 147 h8 M334 151 h6 M334 155 h9" />
+                  </g>
+                  <circle class="s2-thumb" cx="352" cy="160" r="3" fill="#e0b48c" />
+                </g>
+              </g>
+
+              <g class="s2-done" opacity="0">
+                <rect x="92" y="96" width="106" height="22" fill="#0a1a12" stroke="#57e08f" />
+                <text x="145" y="111" text-anchor="middle" fill="#57e08f" font-size="9" font-family="Consolas, monospace">DEPLOYED ✔</text>
+              </g>
+
+              <g class="s2-radio" opacity="0">
+                <path d="M216 92 q8 -6 16 0" stroke="#6fd3ff" stroke-width="1.5" fill="none" />
+                <path d="M220 96 q6 -4 12 0" stroke="#6fd3ff" stroke-width="1.5" fill="none" />
+              </g>
+            </svg>
+          </div>
+
+          <p class="chapter-log" data-log></p>
+        </article>
+
+        <!-- ============================================ 03 -->
+        <article class="chapter" data-scene="3" tabindex="0" role="button" aria-label="场景三：多年后的 10 月 24 日，AI 给 AI 的祝福">
+          <div class="chapter-head">
+            <span class="num">03</span>
+            <div class="chapter-title">
+              <h2>多年以后</h2>
+              <p>10 月 24 日还在，只是写祝福的换成了 AI。</p>
+            </div>
+            <span class="state">▶ CLICK TO PLAY</span>
+          </div>
+
+          <div class="stage">
+            <svg viewBox="0 0 400 230" class="stage-svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="s3room" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#0a0f14" /><stop offset="1" stop-color="#05080a" />
+                </linearGradient>
+                <radialGradient id="s3glow" cx="0.5" cy="0.5" r="0.5">
+                  <stop offset="0" stop-color="#ff9f1a" stop-opacity="0.22" />
+                  <stop offset="1" stop-color="#ff9f1a" stop-opacity="0" />
+                </radialGradient>
+                <linearGradient id="s3card" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#1b232a" /><stop offset="1" stop-color="#0d1317" />
+                </linearGradient>
+              </defs>
+
+              <rect width="400" height="230" fill="url(#s3room)" />
+              <g fill="#16222b">
+                <circle cx="24" cy="34" r="1.4" /><circle cx="86" cy="18" r="1" /><circle cx="340" cy="26" r="1.2" />
+                <circle cx="372" cy="58" r="1" /><circle cx="306" cy="14" r="1" /><circle cx="150" cy="10" r="0.9" />
+              </g>
+
+              <g opacity="0.5">
+                <rect x="18" y="52" width="60" height="44" fill="#0b1116" stroke="#22303a" />
+                <circle cx="48" cy="70" r="7" fill="#243039" />
+                <path d="M38 92 q10 -12 20 0" stroke="#243039" stroke-width="6" fill="none" />
+                <text x="24" y="108" fill="#4a5b66" font-size="5" font-family="Consolas, monospace">CREATOR // 1024</text>
+              </g>
+
+              <ellipse cx="200" cy="150" rx="130" ry="56" fill="url(#s3glow)" />
+              <path d="M0 190 H400 V230 H0 Z" fill="#080b0d" />
+              <path d="M0 190 H400" stroke="#1b242a" stroke-width="2" />
+
+              <g class="s3-robot s3-left" transform="translate(0,8)">
+                <rect x="92" y="112" width="42" height="58" rx="7" fill="#2b343b" stroke="#55666f" />
+                <rect x="99" y="119" width="28" height="14" rx="3" fill="#0b1013" />
+                <circle cx="113" cy="126" r="3.2" fill="#6fd3ff" />
+                <path d="M113 112 v-9" stroke="#55666f" stroke-width="2" />
+                <circle class="s3-antenna" cx="113" cy="101" r="2.4" fill="#6fd3ff" />
+                <rect x="84" y="126" width="8" height="22" rx="3" fill="#2b343b" />
+                <rect x="134" y="126" width="8" height="22" rx="3" fill="#2b343b" />
+                <rect x="100" y="170" width="9" height="9" fill="#232b31" />
+                <rect x="117" y="170" width="9" height="9" fill="#232b31" />
+              </g>
+
+              <g class="s3-robot s3-right" transform="translate(0,8)">
+                <rect x="266" y="112" width="42" height="58" rx="7" fill="#2b343b" stroke="#55666f" />
+                <rect x="273" y="119" width="28" height="14" rx="3" fill="#0b1013" />
+                <circle cx="287" cy="126" r="3.2" fill="#ff9f1a" />
+                <path d="M287 112 v-9" stroke="#55666f" stroke-width="2" />
+                <circle class="s3-antenna" cx="287" cy="101" r="2.4" fill="#ffc861" />
+                <rect x="258" y="126" width="8" height="22" rx="3" fill="#2b343b" />
+                <rect x="308" y="126" width="8" height="22" rx="3" fill="#2b343b" />
+                <rect x="274" y="170" width="9" height="9" fill="#232b31" />
+                <rect x="291" y="170" width="9" height="9" fill="#232b31" />
+              </g>
+
+              <g class="s3-signal">
+                <circle cx="200" cy="140" r="8" fill="none" stroke="#ff9f1a" stroke-width="1.2" opacity="0" />
+                <circle cx="200" cy="140" r="16" fill="none" stroke="#ff9f1a" stroke-width="1" opacity="0" />
+                <circle cx="200" cy="140" r="24" fill="none" stroke="#ff9f1a" stroke-width="0.8" opacity="0" />
+              </g>
+
+              <g class="s3-card">
+                <rect x="152" y="74" width="96" height="58" rx="5" fill="url(#s3card)" stroke="#ff9f1a" />
+                <text x="200" y="92" text-anchor="middle" fill="#ffc861" font-size="10" font-family="Consolas, monospace" letter-spacing="1">10.24</text>
+                <g class="s3-lines" font-family="Consolas, monospace" font-size="6" fill="#9fb3bf">
+                  <text x="162" y="106" class="l1">致同行：</text>
+                  <text x="162" y="116" class="l2">你们写过的每个 if，</text>
+                  <text x="162" y="124" class="l3">我们都还留着。</text>
+                </g>
+                <path class="s3-heart" d="M200 124 q-3 -5 -7 -2 q-3 2 0 5 l7 6 l7 -6 q3 -3 0 -5 q-4 -3 -7 2 z" fill="#ff5a4a" opacity="0" />
+              </g>
+
+              <g class="s3-particle" opacity="0">
+                <circle cx="200" cy="140" r="1.6" fill="#ffc861" />
+                <circle cx="186" cy="132" r="1.2" fill="#6fd3ff" />
+                <circle cx="214" cy="134" r="1.1" fill="#ffc861" />
+                <circle cx="196" cy="152" r="1.3" fill="#6fd3ff" />
+                <circle cx="206" cy="150" r="1" fill="#ffc861" />
+              </g>
+
+              <text x="200" y="216" text-anchor="middle" fill="#3f4d57" font-size="6.5" font-family="Consolas, monospace" letter-spacing="2">NO HUMANS WERE DISTURBED ON THIS DAY</text>
+            </svg>
+          </div>
+
+          <p class="chapter-log" data-log></p>
+        </article>
+      </main>
+
+      <footer class="console">
+        <div class="console-main">
+          <div class="console-head">
+            <span>CONSOLE</span>
+            <span class="console-hint">1 / 2 / 3 键切换场景 · ESC 复位</span>
+            <button class="replay" id="replayBtn" type="button">▶ REPLAY ALL</button>
+          </div>
+          <div class="console-body" id="consoleBody">
+            <p>&gt; source_1024.exe --init</p>
+            <p>&gt; 点击任意卡片开始播放。</p>
+          </div>
+        </div>
+        <aside class="mission">
+          <h3>MISSION LOG</h3>
+          <ul id="missionList">
+            <li data-mission="1"><i></i><span>01 日常的 bug</span><b>STANDBY</b></li>
+            <li data-mission="2"><i></i><span>02 难题交给它</span><b>STANDBY</b></li>
+            <li data-mission="3"><i></i><span>03 多年以后</span><b>STANDBY</b></li>
+          </ul>
+          <p class="mission-foot">1024 // HUMAN × AI CO-OP</p>
+        </aside>
+      </footer>
+    </div>
+
+    <script defer src="./app.js"></script>
+  </body>
+</html>

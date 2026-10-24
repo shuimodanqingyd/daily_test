@@ -1,0 +1,19 @@
+Index: test1.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>print(111)\r\nprint(222)\r\nprint(333)\r\nprint(444)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test1.py b/test1.py
+--- a/test1.py	(revision 0b829e00cc833896f38c09149c2c49cbd36e4f95)
++++ b/test1.py	(date 1791647458556)
+@@ -1,4 +1,5 @@
+ print(111)
+ print(222)
+ print(333)
+-print(444)
+\ No newline at end of file
++print(444)
++print(666)
+\ No newline at end of file
